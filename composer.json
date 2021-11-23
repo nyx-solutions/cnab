@@ -1,5 +1,5 @@
 {
-  "name": "nyx/positional-cnab",
+  "name": "nyx-solutions/positional-cnab",
   "description": "Parser de arquivos de configuração CNAB baseado no projeto de Glauber Portella (https://github.com/glauberportella/cnab-layouts-parser).",
   "type": "project",
   "license": "MIT",
