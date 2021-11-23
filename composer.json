@@ -3,7 +3,7 @@
   "description": "Parser de arquivos de configuração CNAB baseado no projeto de Glauber Portella (https://github.com/glauberportella/cnab-layouts-parser).",
   "type": "project",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     {
       "name": "NYX Solutions",

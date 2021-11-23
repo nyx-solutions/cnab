@@ -5,7 +5,7 @@
     /**
      * Field
      */
-    class Field
+    class PositionalField
     {
         /**
          * @var string

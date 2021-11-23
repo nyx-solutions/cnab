@@ -1,13 +1,11 @@
-fields:
-  - key: data
-    length: 4
-  - key: number_one
-    length: 10
-    type: numeric
-  - key: comment
-    length: 32
-  - key: number_two
-    length: 3
-    padCharacter: 0
-    padPlacement: STR_PAD_LEFT
-
+- key: data
+  length: 4
+- key: number_one
+  length: 10
+  type: numeric
+- key: comment
+  length: 32
+- key: number_two
+  length: 3
+  padCharacter: 0
+  padPlacement: STR_PAD_LEFT

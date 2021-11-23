@@ -7,12 +7,12 @@
     /**
      * Generator
      */
-    class Generator
+    class PositionalGenerator
     {
         /**
-         * @var Schema|null
+         * @var PositionalSchema|null
          */
-        protected ?Schema $schema = null;
+        protected ?PositionalSchema $schema = null;
 
         /**
          * @var array
@@ -20,11 +20,11 @@
         protected array $data = [];
 
         /**
-         * @param Schema $schema
+         * @param PositionalSchema $schema
          *
          * @return static
          */
-        public function setSchema(Schema $schema)
+        public function setSchema(PositionalSchema $schema)
         {
             $this->schema = $schema;
 

@@ -5,12 +5,12 @@
     /**
      * Reader
      */
-    class Reader
+    class PositionalReader
     {
         /**
-         * @var Schema|null
+         * @var PositionalSchema|null
          */
-        protected ?Schema $schema = null;
+        protected ?PositionalSchema $schema = null;
 
         /**
          * @var string
@@ -19,11 +19,11 @@
 
         #region Setters
         /**
-         * @param Schema $schema
+         * @param PositionalSchema $schema
          *
          * @return static
          */
-        public function setSchema(Schema $schema): static
+        public function setSchema(PositionalSchema $schema): static
         {
             $this->schema = $schema;
 
@@ -75,19 +75,53 @@
 
         /**
          * @param string $string
+         * @param int    $firstLine
          *
          * @return array
          */
-        public function readLines($string)
+        public function readLines(string $string, int $firstLine = 1): array
         {
             $lines = explode(PHP_EOL, $string);
+
             $data  = [];
+
+            $currentLine = 1;
+
             foreach ($lines as $line) {
+                if ($currentLine < $firstLine) {
+                    $currentLine++;
+
+                    continue;
+                }
+
                 if (!empty($line)) {
                     $data[] = $this->readLine($line);
                 }
+
+                $currentLine++;
             }
+
             return $data;
+        }
+
+        /**
+         * @param string           $filePath
+         * @param PositionalSchema $schema
+         * @param int              $firstLine
+         *
+         * @return array
+         */
+        public static function readFile(string $filePath, PositionalSchema $schema, int $firstLine = 1): array
+        {
+            if (is_file($filePath)) {
+                $contents = file_get_contents($filePath);
+
+                if (!empty($contents)) {
+                    return (new static())->setSchema($schema)->readLines($contents, $firstLine);
+                }
+            }
+
+            return [];
         }
         #endregion
     }
