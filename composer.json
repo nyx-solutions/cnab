@@ -1,0 +1,31 @@
+{
+  "name": "nyx/positional-cnab",
+  "description": "Parser de arquivos de configuração CNAB baseado no projeto de Glauber Portella (https://github.com/glauberportella/cnab-layouts-parser).",
+  "type": "project",
+  "license": "MIT",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "NYX Solutions",
+      "email": "nyx@jsas.com.br"
+    },
+    {
+      "name": "Jonatas Sas",
+      "email": "atendimento@jsas.com.br"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=8.0.0 <8.1",
+
+    "symfony/yaml": "~v5.3.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "nyx\\": "src"
+    }
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master"
+  }
+}
