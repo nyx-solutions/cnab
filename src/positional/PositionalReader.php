@@ -123,5 +123,21 @@
 
             return [];
         }
+
+        /**
+         * @param string           $contents
+         * @param PositionalSchema $schema
+         * @param int              $firstLine
+         *
+         * @return array
+         */
+        public static function readContents(string $contents, PositionalSchema $schema, int $firstLine = 1): array
+        {
+            if (!empty($contents)) {
+                return (new static())->setSchema($schema)->readLines($contents, $firstLine);
+            }
+
+            return [];
+        }
         #endregion
     }
